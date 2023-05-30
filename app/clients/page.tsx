@@ -1,6 +1,7 @@
 "use client"
 import { UsersIcon, FolderIcon, Square3Stack3DIcon, ViewColumnsIcon, Cog6ToothIcon, MagnifyingGlassIcon, BellIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'
+import seed from '../../seed.json'
 
 const navigation = [
     { name: 'Clients', href: '#', icon: UsersIcon, current: true },
@@ -10,33 +11,39 @@ const navigation = [
     { name: 'Settings', href: '#', icon: Cog6ToothIcon, current: false },
 ]
 
-const currentNavStyle = 'bg-gray-50 text-green-900 border-solid'
-const otherNavStyle = ' hover:bg-gray-50 hover:text-gray-900'
+const tableHeaders = ['Name', 'Company', 'Email', 'Phone', 'Status']
+
+const currentNavStyle = 'font-bold bg-gray-50 text-green-900 border-solid'
+const otherNavStyle = 'font-medium hover:fopnt:semibold hover:bg-gray-50 hover:text-gray-900'
 
 export default function Page() {
-    const [isOpen, setIsOpen] = useState(true)
+    const [isOpen, setIsOpen] = useState(false)
 
     const toggleProfile = () => {
         setIsOpen(!isOpen)
     }
 
+    const openModal = (item: any) => {
+        console.log('clicked! ', item)
+    }
+
     return (
-        <div className="h-screen flex text-sm text-gray-500 bg-white">
-            <nav className='p-5 w-64 rounded-md shadow'>
+        <div className="h-screen w-screen flex text-sm text-gray-500 bg-white">
+            <nav className='p-5 w-64 max-h-full border-r'>
                 <img
                     src='./croki-green.PNG'
                     className='h-12 rounded-md'
                 />
                 <ul className='mt-20 space-y-3'>
                     {navigation.map((item) => (
-                        <li >
+                        <li>
                             <a
                                 key={item.name}
                                 href={item.href}
-                                className={`flex items-center p-2 rounded-md font-bold ${item.current ? currentNavStyle : otherNavStyle}`}
+                                className={`flex items-center p-2 rounded-md transition ease-in-out ${item.current ? currentNavStyle : otherNavStyle}`}
                             >
                                 <item.icon
-                                    className='w-6 h-6 mr-2'
+                                    className='w-6 h-6 mr-2 text-gray-500'
                                 />
                                 {item.name}
                             </a>
@@ -44,9 +51,10 @@ export default function Page() {
                     ))}
                 </ul>
             </nav>
-            <main className='w-full'>
+            <main className='flex flex-col w-full h-full'>
+
                 {/* Search bar*/}
-                <section className=' h-auto w-auto px-7 py-3 flex items-center justify-between shadow'>
+                <section className=' h-16 w-auto px-7 py-3 flex items-center justify-between border-b'>
                     <div className='h-auto flex'>
                         <MagnifyingGlassIcon
                             className='w-5 mr-3'
@@ -81,7 +89,7 @@ export default function Page() {
                             />
                             {isOpen ? (
                                 <ul
-                                    className={`absolute w-32 text-left top-12 p-3 space-y-2 rounded-md bg-white shadow ease-in-out transition-opacity
+                                    className={`absolute w-32 text-left top-12 p-3 space-y-2 rounded-md bg-white shadow transition ease-in-out
                                     ${isOpen ? ' opacity-100' : ' opacity-0'}`}
                                 >
                                     <li><a href='#' className=''>You profile</a></li>
@@ -89,6 +97,41 @@ export default function Page() {
                                 </ul>
                             ) : <></>}
                         </button>
+                    </div>
+                </section>
+
+                {/* Main module */}
+                <section
+                    className='flex flex-col h-full p-14 '
+                >
+                    <div className='p-5 space-y-3 border rounded-lg h-full w-full shadow-md'>
+                        <h1 className='text-xl text-gray-700 font-semibold'>Clients</h1>
+                        <p className=''>List of all customer entities including child and parent.</p>
+                        <table className='w-full text-left'>
+                            <thead>
+                                <tr className='w-full'>
+                                    {tableHeaders.map((item, id) => (
+                                        <th key={id}>{item}</th>
+                                    ))}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {seed.map((item) => (
+                                    <tr
+                                        key={item._id}
+                                        className='w-full'
+                                        onClick={openModal(item)}
+                                    >
+                                        <td>{item.name}</td>
+                                        <td>{item.company}</td>
+                                        <td>{item.email}</td>
+                                        <td>{item.phone}</td>
+                                        <td>{item.isActive}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+
+                        </table>
                     </div>
                 </section>
             </main>

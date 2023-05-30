@@ -1,0 +1,92 @@
+[
+  {
+    "_id": "64750ee7e4ed9038970328b7",
+    "isActive": true,
+    "name": "Celina Randolph",
+    "company": "POLARIUM",
+    "email": "celinarandolph@polarium.com",
+    "phone": "+1 (932) 451-2200",
+    "address": "432 Stryker Street, Enoree, American Samoa, 276"
+  },
+  {
+    "_id": "64750ee7508365255806fdec",
+    "isActive": false,
+    "name": "Ingrid Finley",
+    "company": "UNI",
+    "email": "ingridfinley@uni.com",
+    "phone": "+1 (951) 406-2811",
+    "address": "383 Veronica Place, Rivers, Maryland, 8278"
+  },
+  {
+    "_id": "64750ee7985fbec8ccbb7b10",
+    "isActive": false,
+    "name": "Tillman Valencia",
+    "company": "APPLIDEC",
+    "email": "tillmanvalencia@applidec.com",
+    "phone": "+1 (946) 523-3444",
+    "address": "965 Wyckoff Avenue, Gardiner, Connecticut, 5174"
+  },
+  {
+    "_id": "64750ee7953f64b143431c07",
+    "isActive": true,
+    "name": "Delgado Vang",
+    "company": "REALMO",
+    "email": "delgadovang@realmo.com",
+    "phone": "+1 (803) 406-3594",
+    "address": "872 Garden Street, Malo, North Dakota, 6506"
+  },
+  {
+    "_id": "64750ee72d806b4a7e85c03d",
+    "isActive": true,
+    "name": "Paige Goff",
+    "company": "BUZZOPIA",
+    "email": "paigegoff@buzzopia.com",
+    "phone": "+1 (943) 410-2306",
+    "address": "554 Arkansas Drive, Elliott, Illinois, 6995"
+  },
+  {
+    "_id": "64750ee7abe03135fea3f4d1",
+    "isActive": true,
+    "name": "Warren Pace",
+    "company": "DATAGEN",
+    "email": "warrenpace@datagen.com",
+    "phone": "+1 (902) 402-3251",
+    "address": "306 Clymer Street, Remington, Rhode Island, 7892"
+  },
+  {
+    "_id": "64750ee785c5e005da23eb75",
+    "isActive": false,
+    "name": "Carolyn Frye",
+    "company": "DENTREX",
+    "email": "carolynfrye@dentrex.com",
+    "phone": "+1 (963) 480-3849",
+    "address": "439 Brightwater Avenue, Nadine, Pennsylvania, 8170"
+  },
+  {
+    "_id": "64750ee710ddaaa6ebf6d45b",
+    "isActive": true,
+    "name": "Vasquez Rice",
+    "company": "COMVERGES",
+    "email": "vasquezrice@comverges.com",
+    "phone": "+1 (834) 454-3602",
+    "address": "810 Lawrence Avenue, Smock, Colorado, 6213"
+  },
+  {
+    "_id": "64750ee7809ddb06ae597f08",
+    "isActive": false,
+    "name": "Anastasia Carpenter",
+    "company": "GUSHKOOL",
+    "email": "anastasiacarpenter@gushkool.com",
+    "phone": "+1 (906) 552-2495",
+    "address": "601 Coventry Road, Darlington, Tennessee, 8926"
+  },
+  {
+    "_id": "64750ee776fd7f3dc36e39ae",
+    "isActive": false,
+    "name": "Bernadine Berry",
+    "company": "ZILLACOM",
+    "email": "bernadineberry@zillacom.com",
+    "phone": "+1 (832) 596-3975",
+    "address": "741 Eagle Street, Garfield, Ohio, 4597"
+  }
+]
