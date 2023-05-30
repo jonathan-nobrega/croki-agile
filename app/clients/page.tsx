@@ -52,7 +52,6 @@ export default function Page() {
                 </ul>
             </nav>
             <main className='flex flex-col w-full h-full'>
-
                 {/* Search bar*/}
                 <section className=' h-16 w-auto px-7 py-3 flex items-center justify-between border-b'>
                     <div className='h-auto flex'>
@@ -89,8 +88,8 @@ export default function Page() {
                             />
                             {isOpen ? (
                                 <ul
-                                    className={`absolute w-32 text-left top-12 p-3 space-y-2 rounded-md bg-white shadow transition ease-in-out
-                                    ${isOpen ? ' opacity-100' : ' opacity-0'}`}
+                                    className={`absolute w-32 text-left top-12 p-3 space-y-2 rounded-md bg-white shadow duration-300
+                                    ${isOpen ? '' : 'hidden'}`}
                                 >
                                     <li><a href='#' className=''>You profile</a></li>
                                     <li><a href='#' className=''>Sign out</a></li>
@@ -99,39 +98,85 @@ export default function Page() {
                         </button>
                     </div>
                 </section>
-
                 {/* Main module */}
                 <section
-                    className='flex flex-col h-full p-14 '
+                    className='flex flex-col h-full p-12 '
                 >
                     <div className='p-5 space-y-3 border rounded-lg h-full w-full shadow-md'>
-                        <h1 className='text-xl text-gray-700 font-semibold'>Clients</h1>
-                        <p className=''>List of all customer entities including child and parent.</p>
-                        <table className='w-full text-left'>
-                            <thead>
-                                <tr className='w-full'>
+                        <section className='flex mb-10 justify-between items-center'>
+                            <div>
+                                <h1 className='text-xl text-gray-700 font-semibold'>Clients</h1>
+                                <p className='mt-2'>List of all customer entities including child and parent accounts.</p>
+                            </div>
+                            <button
+                                className='p-2 font-semibold rounded-md bg-green-600 text-white transition duration-300 ease-in-out'
+                            >
+                                Add customer
+                            </button>
+                        </section>
+                        <table className='min-w-full text-left'>
+                            <thead className=''>
+                                <tr className='w-full border-separate'>
                                     {tableHeaders.map((item, id) => (
-                                        <th key={id}>{item}</th>
+                                        <th
+                                            className='py-2 border-b'
+                                            key={id}
+                                        >
+                                            {item}
+                                        </th>
                                     ))}
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody className=''>
                                 {seed.map((item) => (
                                     <tr
                                         key={item._id}
                                         className='w-full'
                                         onClick={openModal(item)}
                                     >
-                                        <td>{item.name}</td>
-                                        <td>{item.company}</td>
-                                        <td>{item.email}</td>
-                                        <td>{item.phone}</td>
-                                        <td>{item.isActive}</td>
+                                        <td className='py-3 border-b border-gray-100'>{item.name}</td>
+                                        <td className='py-3 border-b border-gray-100'>{item.company}</td>
+                                        <td className='py-3 border-b border-gray-100'>{item.email}</td>
+                                        <td className='py-3 border-b border-gray-100'>{item.phone}</td>
+                                        <td className='flex py-3 border-b border-gray-100'>
+                                            {item.isActive ? (
+                                                <div className='p-1 w-16 text-xs text-center font-semibold border border-green-400 bg-green-100 rounded-md'>Active</div>
+                                            ) : (
+                                                <div className='p-1 w-16 text-xs text-center font-semibold border border-red-400 bg-red-100 rounded-md'>Inactive</div>
+                                            )}
+                                        </td>
+
                                     </tr>
                                 ))}
                             </tbody>
 
                         </table>
+                        {/* <div className="table w-full ...">
+                            <div className="table-header-group">
+                                <div className="table-row">
+                                    <div className="table-cell text-left space-y-3">Song</div>
+                                    <div className="table-cell text-left space-y-3">Artist</div>
+                                    <div className="table-cell text-left space-y-3">Year</div>
+                                </div>
+                            </div>
+                            <div className="table-row-group space-y-3">
+                                <div className="table-row">
+                                    <div className="table-cell space-y-3">The Sliding Mr. Bones (Next Stop, Pottersville)</div>
+                                    <div className="table-cell space-y-3">Malcolm Lockyer</div>
+                                    <div className="table-cell space-y-3">1961</div>
+                                </div>
+                                <div className="table-row">
+                                    <div className="table-cell space-y-3">Witchy Woman</div>
+                                    <div className="table-cell space-y-3">The Eagles</div>
+                                    <div className="table-cell space-y-3">1972</div>
+                                </div>
+                                <div className="table-row">
+                                    <div className="table-cell space-y-3">Shining Star</div>
+                                    <div className="table-cell space-y-3">Earth, Wind, and Fire</div>
+                                    <div className="table-cell space-y-3">1975</div>
+                                </div>
+                            </div>
+                        </div> */}
                     </div>
                 </section>
             </main>
