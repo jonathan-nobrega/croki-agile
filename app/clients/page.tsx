@@ -51,7 +51,7 @@ export default function Page() {
                     ))}
                 </ul>
             </nav>
-            <main className='flex flex-col w-full h-full'>
+            <main className='flex flex-col w-full h-full overflow-auto'>
                 {/* Search bar*/}
                 <section className=' h-16 w-auto px-7 py-3 flex items-center justify-between border-b'>
                     <div className='h-auto flex'>
@@ -98,85 +98,61 @@ export default function Page() {
                         </button>
                     </div>
                 </section>
-                {/* Main module */}
-                <section
-                    className='flex flex-col h-full p-12 '
-                >
-                    <div className='p-5 space-y-3 border rounded-lg h-full w-full shadow-md'>
-                        <section className='flex mb-10 justify-between items-center'>
+                {/* Module wrapper */}
+                <section className='p-12 h-full overflow-hidden'>
+                    {/* Clients Module */}
+                    <div className='flex flex-col h-full w-full p-5 space-y-3 border rounded-lg shadow-md'>
+                        <section className='flex mb-5 justify-between items-center bg-white'>
                             <div>
                                 <h1 className='text-xl text-gray-700 font-semibold'>Clients</h1>
                                 <p className='mt-2'>List of all customer entities including child and parent accounts.</p>
                             </div>
-                            <button
-                                className='p-2 font-semibold rounded-md bg-green-600 text-white transition duration-300 ease-in-out'
-                            >
+                            <button className='p-2 font-semibold rounded-md bg-green-600 text-white transition duration-300 ease-in-out'>
                                 Add customer
                             </button>
                         </section>
-                        <table className='min-w-full text-left'>
-                            <thead className=''>
-                                <tr className='w-full border-separate'>
-                                    {tableHeaders.map((item, id) => (
-                                        <th
-                                            className='py-2 border-b'
-                                            key={id}
-                                        >
-                                            {item}
-                                        </th>
-                                    ))}
-                                </tr>
-                            </thead>
-                            <tbody className=''>
-                                {seed.map((item) => (
-                                    <tr
-                                        key={item._id}
-                                        className='w-full'
-                                        onClick={openModal(item)}
-                                    >
-                                        <td className='py-3 border-b border-gray-100'>{item.name}</td>
-                                        <td className='py-3 border-b border-gray-100'>{item.company}</td>
-                                        <td className='py-3 border-b border-gray-100'>{item.email}</td>
-                                        <td className='py-3 border-b border-gray-100'>{item.phone}</td>
-                                        <td className='flex py-3 border-b border-gray-100'>
-                                            {item.isActive ? (
-                                                <div className='p-1 w-16 text-xs text-center font-semibold border border-green-400 bg-green-100 rounded-md'>Active</div>
-                                            ) : (
-                                                <div className='p-1 w-16 text-xs text-center font-semibold border border-red-400 bg-red-100 rounded-md'>Inactive</div>
-                                            )}
-                                        </td>
-
+                        <section className='h-full overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-gray-50'>
+                            <table className='min-w-full text-left '>
+                                <thead className='w-full sticky top-0 bg-white border-collapse border-b'>
+                                    <tr className=''>
+                                        {tableHeaders.map((item, id) => (
+                                            <th
+                                                className='py-4'
+                                                key={id}
+                                            >
+                                                {item}
+                                            </th>
+                                        ))}
+                                        <th className='w-20 py-4'></th>
                                     </tr>
-                                ))}
-                            </tbody>
+                                </thead>
+                                <tbody className='overflow-auto'>
+                                    {seed.map((item) => (
+                                        <tr
+                                            key={item._id}
+                                            className='w-full'
+                                            onClick={openModal(item)}
+                                        >
+                                            <td className='py-4 border-b border-gray-100'>{item.name}</td>
+                                            <td className='py-4 border-b border-gray-100'>{item.company}</td>
+                                            <td className='py-4 border-b border-gray-100'>{item.email}</td>
+                                            <td className='py-4 border-b border-gray-100'>{item.phone}</td>
+                                            <td className='flex py-3 border-b border-gray-100'>
+                                                {item.isActive ? (
+                                                    <div className='p-1 w-16 text-xs text-center text-green-600 font-semibold border border-green-300 bg-green-50 rounded-md'>Active</div>
+                                                ) : (
+                                                    <div className='p-1 w-16 text-xs text-center text-red-600 font-semibold border border-red-300 bg-red-50 rounded-md'>Inactive</div>
+                                                )}
+                                            </td>
+                                            <td className='font-bold text-center text-green-700'>
+                                                <button>Edit</button>
+                                            </td>
 
-                        </table>
-                        {/* <div className="table w-full ...">
-                            <div className="table-header-group">
-                                <div className="table-row">
-                                    <div className="table-cell text-left space-y-3">Song</div>
-                                    <div className="table-cell text-left space-y-3">Artist</div>
-                                    <div className="table-cell text-left space-y-3">Year</div>
-                                </div>
-                            </div>
-                            <div className="table-row-group space-y-3">
-                                <div className="table-row">
-                                    <div className="table-cell space-y-3">The Sliding Mr. Bones (Next Stop, Pottersville)</div>
-                                    <div className="table-cell space-y-3">Malcolm Lockyer</div>
-                                    <div className="table-cell space-y-3">1961</div>
-                                </div>
-                                <div className="table-row">
-                                    <div className="table-cell space-y-3">Witchy Woman</div>
-                                    <div className="table-cell space-y-3">The Eagles</div>
-                                    <div className="table-cell space-y-3">1972</div>
-                                </div>
-                                <div className="table-row">
-                                    <div className="table-cell space-y-3">Shining Star</div>
-                                    <div className="table-cell space-y-3">Earth, Wind, and Fire</div>
-                                    <div className="table-cell space-y-3">1975</div>
-                                </div>
-                            </div>
-                        </div> */}
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </section>
                     </div>
                 </section>
             </main>
