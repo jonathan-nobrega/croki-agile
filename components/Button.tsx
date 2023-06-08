@@ -1,11 +1,11 @@
 interface buttonProps {
     type: "A" | "B" | "C"
     description: string
+    action?: (props?: any) => void
 }
 
 export default function Button(buttonProps: buttonProps) {
-
-    const { type, description } = buttonProps
+    const { type, description, action } = buttonProps
     let style = ""
 
     switch (type) {
@@ -20,7 +20,10 @@ export default function Button(buttonProps: buttonProps) {
             break;
     }
     return (
-        <button className={`${style} w-24 min-w-max p-2 font-semibold rounded-md transition duration-300 ease-in-out`}>
+        <button
+            onClick={action}
+            className={`${style} w-24 min-w-max p-2 font-semibold rounded-md transition duration-300 ease-in-out`}
+        >
             {description}
         </button>
     )

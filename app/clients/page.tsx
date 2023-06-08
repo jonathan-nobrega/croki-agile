@@ -11,7 +11,6 @@ export default function Page() {
         <div className="h-screen w-screen flex text-sm text-gray-500 bg-white">
             <Navbar />
             <main className='flex flex-col w-full h-full overflow-auto'>
-                <TableModal />
                 <SearchBar />
                 {/* Module wrapper */}
                 <section className='p-12 h-full overflow-hidden'>
