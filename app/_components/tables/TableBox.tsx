@@ -1,30 +1,20 @@
 "use client"
 
-import { createPortal } from 'react-dom'
 import Button from '../utils/Button'
-import TableModal from './TableModal'
-import { useState } from 'react'
 import ClientRow from './ClientRow'
 import ProjectRow from './ProjectRow'
 
 
 export default function page({ props }: { props: props }) {
-    const [showModal, setShowModal] = useState(false)
-    const [modalContent, setModalContent] = useState({})
 
     const { title, description, actionButton, headers, data } = props
 
-    function switchModal(payload: any) {
-        if (payload) setModalContent(payload)
-        setShowModal(!showModal)
-    }
-
-    function rowType(item: any) {
+    function tableRow(item: any) {
         switch (data.type) {
             case "clients":
-                return <ClientRow data={item} openModal={switchModal} />
+                return <ClientRow data={item} />
             case "projects":
-                return <ProjectRow data={item} openModal={switchModal} />
+                return <ProjectRow data={item} />
         }
     }
 
@@ -49,18 +39,11 @@ export default function page({ props }: { props: props }) {
                             </tr>
                         </thead>
                         <tbody className='overflow-auto '>
-                            {data.list.map((item: RowInterface) => rowType(item))}
+                            {data.list.map((item: RowInterface) => tableRow(item))}
                         </tbody>
                     </table>
                 </section>
             </div>
-            {showModal && createPortal(
-                <TableModal
-                    content={modalContent}
-                    closeModal={switchModal}
-                />,
-                document.body
-            )}
         </>
     )
 }

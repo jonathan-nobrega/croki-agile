@@ -33,7 +33,7 @@ export default function SearchBar() {
                 >
                     <img
                         className='h-8 rounded-full '
-                        src='./panda.png'
+                        src='/panda.png'
                     />
                     <span className=''>
                         Mr. Panda
