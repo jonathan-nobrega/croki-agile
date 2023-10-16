@@ -1,0 +1,75 @@
+{
+  "type": "projects",
+  "list": [
+    {
+      "_id": 1,
+      "title": "target collaborative paradigms",
+      "client": "Eulalie Pawlata",
+      "billing_method": "Fixed Cost for Project",
+      "isActive": false
+    },
+    {
+      "_id": 2,
+      "title": "incubate impactful channels",
+      "client": "Hilliard Lindstrom",
+      "billing_method": "Fixed Cost for Project",
+      "isActive": false
+    },
+    {
+      "_id": 3,
+      "title": "expedite seamless ROI",
+      "client": "Leonard Saundercock",
+      "billing_method": "Fixed Cost for Project",
+      "isActive": true
+    },
+    {
+      "_id": 4,
+      "title": "engineer intuitive supply-chains",
+      "client": "Tommie Hastilow",
+      "billing_method": "Based on Project Hours",
+      "isActive": true
+    },
+    {
+      "_id": 5,
+      "title": "matrix seamless ROI",
+      "client": "Ally Edmett",
+      "billing_method": "Fixed Cost for Project",
+      "isActive": true
+    },
+    {
+      "_id": 6,
+      "title": "transform integrated functionalities",
+      "client": "Doralyn Campbell",
+      "billing_method": "Fixed Cost for Project",
+      "isActive": true
+    },
+    {
+      "_id": 7,
+      "title": "synergize ubiquitous schemas",
+      "client": "Kylen Acreman",
+      "billing_method": "Based on Project Hours",
+      "isActive": false
+    },
+    {
+      "_id": 8,
+      "title": "productize virtual e-commerce",
+      "client": "Trish Snelling",
+      "billing_method": "Fixed Cost for Project",
+      "isActive": true
+    },
+    {
+      "_id": 9,
+      "title": "engineer real-time bandwidth",
+      "client": "Shay Cullimore",
+      "billing_method": "Fixed Cost for Project",
+      "isActive": true
+    },
+    {
+      "_id": 10,
+      "title": "mesh cross-media methodologies",
+      "client": "Robbie Tiptaft",
+      "billing_method": "Fixed Cost for Project",
+      "isActive": true
+    }
+  ]
+}
