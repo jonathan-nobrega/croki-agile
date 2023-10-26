@@ -1,5 +1,5 @@
 interface ProjectInterface {
-    _id: number
+    _id: string
     title: string
     client: string
     billing_method: string

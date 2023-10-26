@@ -1,4 +1,5 @@
 interface inputField {
+    id: number
     description: string
     value: string
     type: 'text' | 'email' | 'number'

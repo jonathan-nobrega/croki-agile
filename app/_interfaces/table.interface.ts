@@ -1,3 +1,14 @@
+type RowInterface = ClientInterface | ProjectInterface
+
+type SwitchModal = (payload?: any) => void
+
+type TableForm = 'clientForm' | 'projectForm'
+
+interface TableData {
+    type: string
+    list: RowInterface[]
+}
+
 interface props {
     headers: string[]
     title: string
@@ -5,12 +16,3 @@ interface props {
     actionButton: string
     data: TableData
 }
-
-type RowInterface = ClientInterface | ProjectInterface
-
-interface TableData {
-    type: string
-    list: RowInterface[]
-}
-
-type SwitchModal = (payload?: any) => void

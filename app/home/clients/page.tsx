@@ -1,19 +1,32 @@
 "use client"
 
 import TableBox from '../../_components/tables/TableBox'
-import data from '../../_seed/clients.seed.json'
+import TableModal from '@/app/_components/tables/TableModal'
+import TableForm from '@/app/_components/forms/TableForm'
+import { useEffect, useLayoutEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { setModule } from '@/app/_store/reducers/ModuleReducer'
 
 export default function page() {
+    const dispatch = useDispatch()
+    const props = useSelector((state: any) => state.moduleSlice)
 
-    const props = {
-        title: "Clients",
-        description: 'List of all customer entities including child and parent accounts.',
-        actionButton: 'Add customer',
-        headers: ['Name', 'Company', 'Email', 'Phone', 'Status'],
-        data: data
-    }
+    useEffect(() => {
+        dispatch(setModule('clients'))
+    }, [dispatch])
 
     return (
-        <TableBox props={props} />
+        <>
+            <div className='flex flex-col h-full w-full p-5 space-y-3 border rounded-lg shadow-md'>
+                {props.description && (
+                    <>
+                        <TableBox />
+                        <TableModal child={
+                            <TableForm form='clientForm' />
+                        } />
+                    </>
+                )}
+            </div>
+        </>
     )
 }

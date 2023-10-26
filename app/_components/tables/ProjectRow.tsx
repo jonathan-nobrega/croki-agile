@@ -1,4 +1,4 @@
-export default function ProjectRow({ data, openModal }: { data: ProjectInterface, openModal: SwitchModal }) {
+export default function ProjectRow({ data }: { data: ProjectInterface }) {
     return (
         <tr key={data._id} className='w-full hover:bg-gray-50 cursor-pointer'>
             <td className='py-4 border-b border-gray-100'>{data.title}</td>
@@ -16,7 +16,7 @@ export default function ProjectRow({ data, openModal }: { data: ProjectInterface
                 )}
             </td>
             <td className='font-bold text-center text-green-500 hover:text-green-700'>
-                <button onClick={() => openModal(data)}>
+                <button onClick={() => switchModal(data)}>
                     Edit
                 </button>
             </td>

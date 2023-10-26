@@ -1,14 +1,14 @@
 interface buttonProps {
-    type: "A" | "B" | "C"
+    buttonType: "A" | "B" | "C"
     description: string
     action?: (props?: any) => void
 }
 
 export default function Button(buttonProps: buttonProps) {
-    const { type, description, action } = buttonProps
+    const { buttonType, description, action } = buttonProps
     let style = ""
 
-    switch (type) {
+    switch (buttonType) {
         case "A":
             style = 'bg-green-500 text-white hover:bg-green-600'
             break;
@@ -24,7 +24,7 @@ export default function Button(buttonProps: buttonProps) {
             onClick={action}
             className={`${style} w-28 min-w-max p-2 font-semibold rounded-md transition duration-300 ease-in-out`}
         >
-            {description}
+            {description.charAt(0).toUpperCase() + description.slice(1)}
         </button>
     )
 }

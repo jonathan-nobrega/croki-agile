@@ -1,17 +1,10 @@
-import { UsersIcon, FolderIcon, Square3Stack3DIcon, ViewColumnsIcon, Cog6ToothIcon, MagnifyingGlassIcon, BellIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 import { usePathname } from 'next/navigation'
+import { useSelector } from 'react-redux'
 
 export default function Navbar() {
-    const pathname = usePathname().split("/")[2] // Ex: if /home/projects, than result would be 'projects'
-
-    const navigation = [
-        { name: 'Clients', href: '/home/clients', icon: UsersIcon },
-        { name: 'Projects', href: '/home/projects', icon: FolderIcon, },
-        { name: 'Backlog', href: '#', icon: Square3Stack3DIcon, },
-        { name: 'Kanban', href: '#', icon: ViewColumnsIcon, },
-        { name: 'Settings', href: '#', icon: Cog6ToothIcon, },
-    ]
-
+    const pathname = usePathname().split("/")[2] // Ex: if /home/projects, return 'projects'
+    const navigation = useSelector((state: any) => state.navSlice )
+    
     const currentNavStyle = 'font-bold bg-gray-50 text-green-900 border-solid'
     const otherNavStyle = 'font-medium hover:bg-gray-50 hover:text-gray-900'
 
@@ -22,10 +15,9 @@ export default function Navbar() {
                 className='h-12 rounded-md'
             />
             <ul className='mt-20 space-y-3'>
-                {navigation.map((item) => (
-                    <li>
+                {navigation.map((item: any) => (
+                    <li key={item._id}>
                         <a
-                            key={item.name}
                             href={item.href}
                             className={
                                 `flex items-center p-2 rounded-md transition ease-in-out 
