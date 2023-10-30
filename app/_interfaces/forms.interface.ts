@@ -1,11 +1,15 @@
 interface FormInterface {
     header: string
-    type: string | 'create' | 'update'
-    fields: {
-        id: number
-        description: string
-        value: string,
-        type: 'text' | 'email'
-        size: number
-    }[]
+    fields: FormField[]
+    payload?: any
+    buttonDescription: string
+    buttonAction: () => void
+}
+
+interface FormField {
+    id: number
+    description: string
+    value: string,
+    type: 'text' | 'email'
+    size: number
 }

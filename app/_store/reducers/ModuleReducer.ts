@@ -31,9 +31,8 @@ const moduleSlice = createSlice({
     name: 'ModuleSlice',
     initialState: {},
     reducers: {
-        setModule: (state, action) => {
-            const newModule = action.payload
-            return modules.find((module) => module.title == newModule)
+        setModule: (state, { payload }) => {
+            return modules.find((module) => module.title == payload)
         }
     }
 })

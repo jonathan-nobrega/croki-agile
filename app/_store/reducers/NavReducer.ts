@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { UsersIcon, FolderIcon, Square3Stack3DIcon, ViewColumnsIcon, Cog6ToothIcon, MagnifyingGlassIcon, BellIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
+import { UsersIcon, FolderIcon, Square3Stack3DIcon, ViewColumnsIcon, Cog6ToothIcon } from '@heroicons/react/24/outline'
 
 const initialState = [{
     _id: 1,

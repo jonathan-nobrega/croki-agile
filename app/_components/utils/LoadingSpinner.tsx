@@ -1,5 +1,5 @@
 export default function LoadingSpinner() {
-    const size = 14
+    const size = 16
 
     return (
         <section className="flex justify-center items-center h-full" role="status">

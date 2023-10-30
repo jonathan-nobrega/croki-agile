@@ -1,14 +1,14 @@
 interface buttonProps {
-    buttonType: "A" | "B" | "C"
+    type: "A" | "B" | "C"
     description: string
-    action?: (props?: any) => void
+    action?: any
 }
 
 export default function Button(buttonProps: buttonProps) {
-    const { buttonType, description, action } = buttonProps
+    const { type, description, action } = buttonProps
     let style = ""
 
-    switch (buttonType) {
+    switch (type) {
         case "A":
             style = 'bg-green-500 text-white hover:bg-green-600'
             break;

@@ -1,15 +1,8 @@
-import { useDispatch, useSelector } from "react-redux"
-import Button from "../utils/Button"
-import { modalToogle } from "@/app/_store/reducers/ModalReducer"
+import { useSelector } from "react-redux"
 
-export default function TableForm({ form }: { form: TableForm }) {
+export default function TableForm({ form }: { form: FormInterface }) {
 
     const { header, type, fields } = useSelector((state: any) => state[form])
-    const dispatch = useDispatch()
-
-    function closeModal() {
-        dispatch(modalToogle())
-    }
 
     return (
         <>
@@ -30,17 +23,6 @@ export default function TableForm({ form }: { form: TableForm }) {
                         />
                     </div>
                 ))}
-            </section>
-            <section className="m-5 space-x-5">
-                <Button
-                    description={type}
-                    buttonType="A"
-                />
-                <Button
-                    description="Cancel"
-                    buttonType="B"
-                    action={closeModal}
-                />
             </section>
         </>
     )
