@@ -4,8 +4,9 @@ import { useState, createContext, useContext, useEffect } from 'react'
 import Button from '../utils/Button'
 import { useDispatch, useSelector } from 'react-redux'
 import { modalToogle } from '@/app/_store/reducers/ModalReducer'
+import LoadingSpinner from '../utils/LooadingSpinner'
 
-export default function page() {
+export default function page(props: TableProps) {
 
     const {
         title,
@@ -13,14 +14,15 @@ export default function page() {
         buttonDescription,
         tableHeaders,
         tableRow,
-        tableData
-    } = useSelector((state: any) => state.moduleSlice)
+        tableData,
+    } = props
 
-    const dispatch = useDispatch()
-    const [data, setData] = useState([])
+    const [data, setData] = useState()
 
     useEffect(() => {
-        setData(tableData)
+        setTimeout(() => {
+            setData(tableData)
+        }, 1000)
     }, [data])
 
     function openModal(modalName: string, modalData?: any) {
@@ -29,10 +31,8 @@ export default function page() {
         }))
     }
 
-
     return (
-        <>
-
+        <div className='flex flex-col h-full'>
             <section className='flex mb-5 justify-between items-center bg-white'>
                 <div>
                     <h1 className='text-xl text-gray-700 font-semibold'>{title.charAt(0).toUpperCase() + title.slice(1)}</h1>
@@ -42,7 +42,8 @@ export default function page() {
                 <Button buttonType='A' description={buttonDescription} action={() => openModal('createClient')} />
             </section>
             <section className='h-full overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-gray-50'>
-                {data &&
+                {data
+                    ?
                     <table className='min-w-full text-left '>
                         <thead className='w-full sticky top-0 bg-white border-collapse border-b'>
                             <tr>
@@ -55,9 +56,11 @@ export default function page() {
                         <tbody className='overflow-auto '>
                             {data.map((item: RowInterface) => tableRow(item))}
                         </tbody>
-                    </table>}
+                    </table>
+                    :
+                    <LoadingSpinner />
+                }
             </section>
-
-        </>
+        </div>
     )
 }
