@@ -1,9 +1,3 @@
-interface buttonProps {
-    type: "A" | "B" | "C"
-    description: string
-    action?: any
-}
-
 export default function Button(buttonProps: buttonProps) {
     const { type, description, action } = buttonProps
     let style = ""

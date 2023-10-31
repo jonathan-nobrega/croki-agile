@@ -1,7 +1,9 @@
 import { useSelector } from "react-redux"
-import ClientRow from "./ClientRow"
 import { useEffect, useState } from "react"
+
+import ClientRow from "./ClientRow"
 import LoadingSpinner from "../utils/LoadingSpinner"
+import ProjectRow from "./ProjectRow"
 
 export default function TableBody() {
     const { title, tableHeaders, tableData } = useSelector((state: any) => state.moduleSlice)
@@ -14,8 +16,8 @@ export default function TableBody() {
     }, [data])
 
     function selectRow(module: string, payload: any) {
-        console.log(module, payload)
-        if (module == 'clients') return (<ClientRow data={payload} />)
+        if (module.toLowerCase() == 'clients') return (<ClientRow data={payload} />)
+        if (module.toLowerCase() == 'projects') return (<ProjectRow data={payload} />)
     }
 
     return (

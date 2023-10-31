@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import modalEscapeHandlers from "@/app/_hooks/modalEscapeHandlers"
 import { closeModal } from "@/app/_store/reducers/ModalReducer"
 import ClientForm from "../forms/ClientForm"
+import ProjectForm from "../forms/ProjectForm"
 
 
 export default function TableModal() {
@@ -18,6 +19,7 @@ export default function TableModal() {
 
     function chooseForm(payload: any) {
         if (tableForm == 'ClientForm') return <ClientForm payload={payload} />
+        if (tableForm == 'ProjectForm') return <ProjectForm payload={payload} />
     }
 
     return (

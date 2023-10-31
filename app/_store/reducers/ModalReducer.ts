@@ -11,7 +11,6 @@ const modalSlice = createSlice({
     initialState,
     reducers: {
         openModal: (state, { payload }: { payload?: any }) => {
-            console.log('reducer: ', payload)
             return {
                 isOpen: true,
                 payload: payload,
