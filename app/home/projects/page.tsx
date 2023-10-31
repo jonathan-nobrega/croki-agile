@@ -1,6 +1,6 @@
 "use client"
 
-import TableBox from '../../_components/tables/TableBox'
+import TableBox from '../../_components/tables/Table'
 import data from '../../_seed/projects.seed.json'
 
 export default function page() {

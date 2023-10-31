@@ -1,6 +1,8 @@
-import FormLayout from "../FormLayout";
+import FormLayout from "./FormLayout";
 
-export default function CreateClient() {
+export default function ClientForm(
+    { type, payload }: { type: 'create' | 'update', payload?: ClientInterface }
+) {
 
     function action() {
         // call api
@@ -16,7 +18,8 @@ export default function CreateClient() {
                 { id: 4, description: 'phone', value: '', type: 'text', size: 1 },
                 { id: 5, description: 'address', value: '', type: 'text', size: 2 },
             ]}
-            buttonDescription='Add Client'
+            payload={payload}
+            buttonDescription={type == 'create' ? 'Create client' : 'Update client'}
             buttonAction={action}
         />
     )
