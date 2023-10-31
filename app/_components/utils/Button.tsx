@@ -22,7 +22,7 @@ export default function Button(buttonProps: buttonProps) {
     return (
         <button
             onClick={action}
-            className={`${style} w-28 min-w-max p-2 font-semibold rounded-md transition duration-300 ease-in-out`}
+            className={`${style} w-28 min-w-max p-2 font-semibold rounded-md transition duration-100 ease-in-out`}
         >
             {description.charAt(0).toUpperCase() + description.slice(1)}
         </button>

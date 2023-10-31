@@ -16,6 +16,7 @@ export default function page() {
         buttonDescription: 'Add client',
         tableHeaders: ['Name', 'Company', 'Email', 'Phone', 'Status'],
         tableData: clientsSeed,
+        tableForm: 'ClientForm',
     }
 
     const dispatch = useDispatch()

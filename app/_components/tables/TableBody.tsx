@@ -5,12 +5,12 @@ import LoadingSpinner from "../utils/LoadingSpinner"
 
 export default function TableBody() {
     const { title, tableHeaders, tableData } = useSelector((state: any) => state.moduleSlice)
-    const [data, setData] = useState()
+    const [data, setData] = useState([])
 
     useEffect(() => {
         setTimeout(() => {
             setData(tableData)
-        }, 100)
+        }, 1000)
     }, [data])
 
     function selectRow(module: string, payload: any) {
@@ -20,7 +20,7 @@ export default function TableBody() {
 
     return (
         <section className='h-full overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-gray-50'>
-            {data
+            {data.length > 0
                 ?
                 <table className='min-w-full text-left '>
                     <thead className='w-full sticky top-0 bg-white border-collapse border-b'>

@@ -8,7 +8,7 @@ import ClientForm from "../forms/ClientForm"
 
 export default function TableModal() {
     const { isOpen, data } = useSelector((state: any) => state.modalSlice)
-    const { title } = useSelector((state: any) => state.moduleSlice)
+    const { title, tableForm } = useSelector((state: any) => state.moduleSlice)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -17,7 +17,7 @@ export default function TableModal() {
     }, [isOpen])
 
     function chooseForm(payload: any) {
-        if (title == 'clients') return <ClientForm data={payload} />
+        if (tableForm == 'ClientForm') return <ClientForm payload={payload} />
     }
 
     return (

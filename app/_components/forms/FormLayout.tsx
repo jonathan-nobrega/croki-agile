@@ -3,7 +3,7 @@ import Button from "../utils/Button"
 import { closeModal } from "@/app/_store/reducers/ModalReducer"
 
 export default function FormLayout(
-    { header, fields, payload, buttonDescription, buttonAction }: FormInterface
+    { header, fields, buttonDescription, buttonAction }: FormInterface
 ) {
 
     const dispatch = useDispatch()
