@@ -8,7 +8,7 @@ export default function SearchBar() {
         setIsOpen(!isOpen)
     }
     return (
-        <section className=' h-16 w-auto px-7 py-3 flex items-center justify-between border-b'>
+        <section className=' h-14 w-auto px-7 py-3 flex items-center justify-between border-b'>
             <div className='h-auto flex'>
                 <MagnifyingGlassIcon
                     className='w-5 mr-3'

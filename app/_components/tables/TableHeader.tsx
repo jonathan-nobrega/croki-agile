@@ -17,7 +17,7 @@ export default function TableHeaders() {
     }
 
     return (
-        <section className='flex mb-5 justify-between items-center bg-white'>
+        <section className='flex mb-2 justify-between items-center bg-white'>
             <div>
                 <h1 className='text-xl text-gray-700 font-semibold'>
                     {title.charAt(0).toUpperCase() + title.slice(1)}

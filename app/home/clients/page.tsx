@@ -23,11 +23,11 @@ export default function page() {
     dispatch(setModule(state))
 
     return (
-        <div className='flex flex-col h-full w-full p-5 space-y-3 border rounded-lg shadow-md'>
+        <>
             <TableHeaders />
             <TableBody />
             <TableModal />
-        </div>
+        </>
     )
 }
 

@@ -14,14 +14,14 @@ export default function Navbar() {
         { _id: 6, title: 'Settings', href: '/home/settings', icon: Cog6ToothIcon },
     ]
 
-    const currentNavStyle = 'font-bold bg-gray-50 text-green-900 border-solid'
+    const currentNavStyle = 'font-bold bg-gray-100 text-green-900 border-solid'
     const otherNavStyle = 'font-medium hover:bg-gray-50 hover:text-gray-900'
 
     return (
-        <nav className='p-5 w-64 max-h-full border-r'>
+        <nav className='p-5 w-auto 2xl:w-64 xl:w-56 w-5 max-h-full border-r'>
             <img
                 src='/croki-green.PNG'
-                className='h-12 rounded-md'
+                className='h-auto w-auto rounded-md'
             />
             <ul className='mt-20 space-y-3'>
                 {navigation.map((item: NavItem) => (
