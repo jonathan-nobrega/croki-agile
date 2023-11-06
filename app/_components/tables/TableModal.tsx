@@ -17,9 +17,9 @@ export default function TableModal() {
         modalEscapeHandlers(escape)
     }, [isOpen])
 
-    function chooseForm(payload: any) {
-        if (tableForm == 'ClientForm') return <ClientForm payload={payload} />
-        if (tableForm == 'ProjectForm') return <ProjectForm payload={payload} />
+    function chooseForm() {
+        if (tableForm == 'ClientForm') return <ClientForm />
+        if (tableForm == 'ProjectForm') return <ProjectForm />
     }
 
     return (
@@ -28,7 +28,7 @@ export default function TableModal() {
                 <div id='modal-root' className="w-screen h-screen fixed inset-0 flex items-center justify-center z-10 bg-gray-900 bg-opacity-30">
                     <div id='modal-container' className="w-1/2 h-96 rounded-lg bg-white shadow-md">
                         <div id='modal-form' className="h-full w-full">
-                            {chooseForm(data)}
+                            {chooseForm()}
                         </div>
                     </div>
                 </div>,

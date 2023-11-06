@@ -1,11 +1,4 @@
 {
   "extends": "next/core-web-vitals",
-  "rules": [
-    {
-      "indent": [
-        "warning",
-        2
-      ]
-    }
-  ]
+  "rules": []
 }

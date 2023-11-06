@@ -1,7 +1,14 @@
 import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import classnames from "classnames"
 
-export default function ColumnDropArea({ onDrop }: DropAreaProps) {
+import { setCardColumn } from "@/app/_store/reducers/KanbanReducer"
+
+export default function ColumnDropArea(
+    { columnTitle }: { columnTitle: string }
+) {
+    const dispatch = useDispatch()
+    const { draggingCard, currentCards } = useSelector((state: any) => state.kanbanSlice)
     const [isVisible, setIsvisible] = useState(false)
 
     function showArea() {
@@ -10,6 +17,12 @@ export default function ColumnDropArea({ onDrop }: DropAreaProps) {
 
     function hideArea() {
         setIsvisible(false)
+    }
+
+    function onDrop() {
+        console.log('before', currentCards)
+        dispatch(setCardColumn({ draggingCard, columnTitle }))
+        console.log('after', currentCards)
     }
 
     return (

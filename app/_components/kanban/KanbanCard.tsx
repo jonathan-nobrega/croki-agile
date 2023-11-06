@@ -17,9 +17,15 @@ export default function KanbanCard(
             cursor-grab active:animate-pulse
             "
         >
-            <p className="text-xs p-1 w-12 inline-block rounded-md border-2 border-gray-200">{_id.substring(0, 5)}</p>
-            <p className="text-sm">{title}</p>
-            <p className="text-xs text-right">{client}</p>
+            <p className="text-xs p-1 w-18 inline-block rounded-md border-2 border-gray-200">
+                {"#" + _id.substring(0, 5)}
+            </p>
+            <p className="text-sm">
+                {title}
+            </p>
+            <p className="text-xs text-right">
+                {client}
+            </p>
 
         </div>
     )

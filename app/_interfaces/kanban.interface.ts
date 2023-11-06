@@ -1,11 +1,11 @@
-type DropAreaProps = {
-    onDrop: () => void
+interface KanbanState {
+    currentCards: ProjectInterface[] | []
+    draggingCard: string
+    hoveredColumn: string
 }
 
 type ColumnProps = {
     title: string
-    id: number
     icon: any
-    data: any[]
-    onDrop: (column: any, index: number) => void
+    id?: number
 }

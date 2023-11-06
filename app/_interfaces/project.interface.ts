@@ -4,4 +4,5 @@ interface ProjectInterface {
     client: string
     billing_method: string
     isActive: boolean
+    status: string
 }
