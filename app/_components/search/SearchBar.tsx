@@ -41,7 +41,7 @@ export default function SearchBar() {
                     <ChevronDownIcon
                         className='w-4'
                     />
-                    {isOpen ? (
+                    {isOpen && (
                         <ul
                             className={`absolute w-32 text-left top-12 p-3 space-y-2 rounded-md bg-white shadow duration-300
                         ${isOpen ? '' : 'hidden'}`}
@@ -49,7 +49,7 @@ export default function SearchBar() {
                             <li key='profile' ><a href='#' className=''>You profile</a></li>
                             <li key='sign-out' ><a href='#' className=''>Sign out</a></li>
                         </ul>
-                    ) : <></>}
+                    )}
                 </button>
             </div>
         </section>

@@ -1,8 +1,9 @@
 import { useDispatch } from 'react-redux'
-import RowStatus from '../utils/RowStatus'
-import { openModal } from '@/app/_store/reducers/ModalReducer'
 
-export default function ClientRow({ data }: {data: ClientInterface}) {
+import { openModal } from '@/app/_store/reducers/ModalReducer'
+import ActiveStatus from '../utils/ActiveStatus'
+
+export default function ClientRow({ data }: { data: ClientInterface }) {
     const { _id, name, company, email, phone, isActive } = data
     const dispatch = useDispatch()
 
@@ -16,7 +17,7 @@ export default function ClientRow({ data }: {data: ClientInterface}) {
             <td className='py-4 border-b border-gray-100'>{email}</td>
             <td className='py-4 border-b border-gray-100'>{phone}</td>
             <td className='flex py-3 border-b border-gray-100'>
-                <RowStatus active={isActive} />
+                <ActiveStatus active={isActive} />
             </td>
             <td className='font-bold text-center text-green-500 hover:text-green-700'>
                 <button onClick={() => handleButton(data)}>

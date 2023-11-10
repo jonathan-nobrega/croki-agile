@@ -11,15 +11,15 @@ export default function KanbanColumn({ icon, title }: ColumnProps) {
     const columnCards: ProjectInterface[] =
         currentCards
             .filter((element: ProjectInterface) => element.status === title)
-            // .sort()
+    // .sort()
 
     return (
         <div className="rounded-lg bg-gray-100 p-3">
-            <div className="flex">
-                {/* <icon.icon className="w-6 h-6" /> */}
-                <h2 className="mb-3 text-lg text-gray-700">
+            <div className="flex m-2 align-middle">
+                <h2 className="mr-3 text-lg text-gray-700">
                     {title}
                 </h2>
+                {icon}
             </div>
             <ColumnDropArea
                 columnTitle={title}

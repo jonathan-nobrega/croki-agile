@@ -1,8 +1,9 @@
 "use client"
 
-import { setModule } from "@/app/_store/reducers/ModuleReducer"
+import { Fragment } from "react"
 import { useDispatch } from "react-redux"
 
+import { setModule } from "@/app/_store/reducers/ModuleReducer"
 import projectsSeed from '../../_seed/projects.seed.json'
 import TableHeaders from "@/app/_components/tables/TableHeader"
 import TableModal from "@/app/_components/tables/TableModal"
@@ -23,11 +24,11 @@ export default function page() {
     dispatch(setModule(state))
 
     return (
-        <>
+        <Fragment>
             <TableHeaders />
             <KanbanBody />
             <TableModal />
-        </>
+        </Fragment>
     )
 }
 

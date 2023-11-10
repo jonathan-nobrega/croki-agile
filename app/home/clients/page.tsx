@@ -6,6 +6,7 @@ import TableHeaders from '@/app/_components/tables/TableHeader'
 import TableBody from '@/app/_components/tables/TableBody'
 import TableModal from '@/app/_components/tables/TableModal'
 import clientsSeed from '../../_seed/clients.seed.json'
+import { Fragment } from 'react'
 
 
 export default function page() {
@@ -23,11 +24,11 @@ export default function page() {
     dispatch(setModule(state))
 
     return (
-        <>
+        <Fragment>
             <TableHeaders />
             <TableBody />
             <TableModal />
-        </>
+        </Fragment>
     )
 }
 

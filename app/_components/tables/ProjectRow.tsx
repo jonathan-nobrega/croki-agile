@@ -1,6 +1,7 @@
-import { openModal } from "@/app/_store/reducers/ModalReducer"
 import { useDispatch } from "react-redux"
-import RowStatus from "../utils/RowStatus"
+
+import { openModal } from "@/app/_store/reducers/ModalReducer"
+import ActiveStatus from "../utils/ActiveStatus"
 
 export default function ProjectRow({ data }: { data: ProjectInterface }) {
     const { _id, title, client, billing_method, isActive } = data
@@ -15,7 +16,7 @@ export default function ProjectRow({ data }: { data: ProjectInterface }) {
             <td className='py-4 border-b border-gray-100'>{client}</td>
             <td className='py-4 border-b border-gray-100'>{billing_method}</td>
             <td className='flex py-3 border-b border-gray-100'>
-                <RowStatus active={isActive} />
+                <ActiveStatus active={isActive} />
             </td>
             <td className='font-bold text-center text-green-500 hover:text-green-700'>
                 <button onClick={() => handleButton(data)}>

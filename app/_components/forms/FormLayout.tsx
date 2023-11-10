@@ -1,3 +1,4 @@
+import { Fragment } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import Button from "../utils/Button"
 import { closeModal } from "@/app/_store/reducers/ModalReducer"
@@ -13,7 +14,7 @@ export default function FormLayout(
     }
 
     return (
-        <>
+        <Fragment>
             <h1 className="m-5 text-xl text-gray-700 font-semibold">
                 {header}
             </h1>
@@ -44,6 +45,6 @@ export default function FormLayout(
                     type="B"
                 />
             </section>
-        </>
+        </Fragment>
     )
 }

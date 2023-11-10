@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import ClientRow from "./ClientRow"
 import LoadingSpinner from "../utils/LoadingSpinner"
 import ProjectRow from "./ProjectRow"
+import InvoiceRow from "./InvoiceRow"
 
 export default function TableBody() {
     const { title, tableHeaders, tableData } = useSelector((state: any) => state.moduleSlice)
@@ -18,6 +19,7 @@ export default function TableBody() {
     function selectRow(module: string, payload: any) {
         if (module.toLowerCase() == 'clients') return (<ClientRow data={payload} />)
         if (module.toLowerCase() == 'projects') return (<ProjectRow data={payload} />)
+        if (module.toLowerCase() == 'invoices') return (<InvoiceRow data={payload} />)
     }
 
     return (

@@ -1,6 +1,7 @@
-import { useEffect } from "react"
+import { Fragment, useEffect } from "react"
 import { createPortal } from "react-dom"
 import { useDispatch, useSelector } from "react-redux"
+
 import modalEscapeHandlers from "@/app/_hooks/modalEscapeHandlers"
 import { closeModal } from "@/app/_store/reducers/ModalReducer"
 import ClientForm from "../forms/ClientForm"
@@ -23,7 +24,7 @@ export default function TableModal() {
     }
 
     return (
-        <>
+        <Fragment>
             {isOpen && createPortal(
                 <div id='modal-root' className="w-screen h-screen fixed inset-0 flex items-center justify-center z-10 bg-gray-900 bg-opacity-30">
                     <div id='modal-container' className="w-1/2 h-96 rounded-lg bg-white shadow-md">
@@ -34,6 +35,6 @@ export default function TableModal() {
                 </div>,
                 document.body)
             }
-        </>
+        </Fragment>
     )
 }

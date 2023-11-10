@@ -18,7 +18,7 @@ export default function Navbar() {
     const otherNavStyle = 'font-medium hover:bg-gray-50 hover:text-gray-900'
 
     return (
-        <nav className='p-5 w-auto 2xl:w-64 xl:w-56 w-5 max-h-full border-r'>
+        <nav className='p-5 2xl:w-64 xl:w-56 w-5 max-h-full border-r'>
             <img
                 src='/croki-green.PNG'
                 className='h-auto w-auto rounded-md'

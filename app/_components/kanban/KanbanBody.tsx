@@ -28,7 +28,11 @@ export default function KanbanBody() {
                 <Fragment key={column._id}>
                     <KanbanColumn
                         title={column.title}
-                        icon={column.icon}
+                        icon={
+                            <column.icon
+                                className='w-6 h-auto text-gray-400'
+                            />
+                        }
                     />
                 </Fragment>
             ))}
