@@ -2,8 +2,7 @@ import { openModal } from "@/app/_store/reducers/ModalReducer"
 import { useDispatch, useSelector } from "react-redux"
 import Button from "../utils/Button"
 
-export default function TableHeaders() {
-
+export default function CalendarHeader() {
     const {
         title,
         description,
@@ -26,12 +25,19 @@ export default function TableHeaders() {
                     {description}
                 </p>
             </div>
-            {buttonDescription &&
+            <div className="flex my-auto space-x-5 justify-between align-middle">
+                <Button
+                    type='C'
+                    description='Today'
+                    action={handleButton}
+                />
+                <div className='h-auto border-r border-gray-200 shadow' />
                 <Button
                     type='A'
                     description={buttonDescription}
                     action={handleButton}
-                />}
+                />
+            </div>
         </section>
     )
 }

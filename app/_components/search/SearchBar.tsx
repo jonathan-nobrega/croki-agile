@@ -24,9 +24,7 @@ export default function SearchBar() {
                         className='w-6'
                     />
                 </button>
-                <div
-                    className='h-7 border-r border-gray-300 shadow'
-                />
+                <div className='h-7 border-r border-gray-300 shadow' />
                 <button
                     className='flex items-center space-x-2 ease-in-out'
                     onClick={toggleProfile}
