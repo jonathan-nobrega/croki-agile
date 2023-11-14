@@ -68,7 +68,7 @@
   "billing_address": 88,
   "amount": 445.47,
   "due_date": "12/19/2023",
-  "status": "Draft",
+  "status": "Void",
   "items": [
     {
       "item_name": "tristique est et tempus semper est quam",
@@ -115,7 +115,7 @@
   "billing_address": 93,
   "amount": 826.52,
   "due_date": "03/31/2023",
-  "status": "Pending",
+  "status": "Void",
   "items": [
     {
       "item_name": "augue quam sollicitudin vitae consectetuer",
@@ -198,7 +198,7 @@
   "billing_address": 55,
   "amount": 488.92,
   "due_date": "09/04/2023",
-  "status": "Pending",
+  "status": "Void",
   "items": [
     {
       "item_name": "vitae ipsum aliquam non mauris morbi non lectus aliquam sit",

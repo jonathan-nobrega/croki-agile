@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux"
 
 import { openModal } from "@/app/_store/reducers/ModalReducer"
 import PaymentStatus from "../utils/PaymentStatus"
+import { MapPinIcon } from "@heroicons/react/24/outline"
 
 export default function ProjectRow({ data }: { data: InvoiceInterface }) {
     const {
@@ -28,7 +29,7 @@ export default function ProjectRow({ data }: { data: InvoiceInterface }) {
             <td className='py-4 '><strong>{description.substring(0, 40)}</strong></td>
             <td className='py-4 h-full border-gray-100'>
                 <p>{bill_to}</p>
-                <p className=" text-xs text-gray-400">{address.full_address}</p>
+                <p className="my-auto text-xs text-gray-400">{address.full_address}</p>
             </td>
             <td className='py-4 '><strong>$ {amount}</strong></td>
             <td className='py-4 '>{due_date}</td>
